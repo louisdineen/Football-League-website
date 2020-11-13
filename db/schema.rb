@@ -10,6 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2020_11_13_153223) do
+
+  create_table "results", force: :cascade do |t|
+    t.string "home"
+    t.integer "hg"
+    t.integer "ag"
+    t.string "away"
+    t.string "time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
 end
