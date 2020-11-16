@@ -1,0 +1,68 @@
+<%= image_tag "Premier_League_Logo.svg.png" %>
+<h1>League Table</h1>
+
+<table>
+  <thead>
+  <tr>
+    <th>Pos</th>
+    <th>Team</th>
+    <th>W</th>
+    <th>D</th>
+    <th>L</th>
+    <th>GF</th>
+    <th>GA</th>
+    <th>GD</th>
+    <th>Points</th>
+    <th colspan="10"></th>
+  </tr>
+  </thead>
+
+  <% count = 0 %>
+  <% array = Array.new(20){Array.new(9,0)} %>
+    <% @result.each do |team| %>
+        <% wins = 0 %>
+        <% draws = 0 %>
+        <% losses = 0 %>
+        <% array[count][1] = team.home %>
+        <% if team.hg > team.ag %>
+        <% wins = wins + 1 %>
+        <% elsif team.hg == team.ag %>
+        <% draws = draws + 1 %>
+        <% else %>
+        <% losses = losses + 1 %>
+        <% end %>
+        <% gf = team.hg %>
+        <% ga = team.ag %>
+        <% gd = gf - ga %>
+        <% points = wins*3 + draws %>
+        <% array[count][2] = wins %>
+        <% array[count][3] = draws %>
+        <% array[count][4] = losses %>
+        <% array[count][5] = gf %>
+        <% array[count][6] = ga %>
+        <% array[count][7] = gd %>
+        <% array[count][8] = points %>
+        <% count = count + 1 %>
+    <% end %>
+
+  <% pos = 1 %>
+  <% array.sort_by!{|k|k[8]}.reverse! %>
+  <% for i in array %>
+  <tbody>
+    <tr>
+    <td><%= pos %></td>
+    <td><%= i[1] %></td>
+    <td><%= i[2] %></td>
+    <td><%= i[3] %></td>
+    <td><%= i[4] %></td>
+    <td><%= i[5] %></td>
+    <td><%= i[6] %></td>
+    <td><%= i[7] %></td>
+    <td><%= i[8] %></td>
+    </tr>
+    <% pos = pos + 1 %>
+  <% end %>
+  </tbody>
+</table>
+
+<%= link_to "Back", welcome_index_path %>
