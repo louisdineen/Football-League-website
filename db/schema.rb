@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_13_153223) do
+ActiveRecord::Schema.define(version: 2020_11_21_195507) do
+
+  create_table "matches", force: :cascade do |t|
+    t.string "home"
+    t.string "away"
+    t.string "time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "results", force: :cascade do |t|
     t.string "home"

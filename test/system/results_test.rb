@@ -6,12 +6,12 @@ class ResultsTest < ApplicationSystemTestCase
   end
 
   test "visiting the index" do
-    visit results_url
+    visit fixtures_url
     assert_selector "h1", text: "Results"
   end
 
   test "creating a Result" do
-    visit results_url
+    visit fixtures_url
     click_on "New Result"
 
     fill_in "Ag", with: @result.ag
@@ -26,7 +26,7 @@ class ResultsTest < ApplicationSystemTestCase
   end
 
   test "updating a Result" do
-    visit results_url
+    visit fixtures_url
     click_on "Edit", match: :first
 
     fill_in "Ag", with: @result.ag
@@ -41,7 +41,7 @@ class ResultsTest < ApplicationSystemTestCase
   end
 
   test "destroying a Result" do
-    visit results_url
+    visit fixtures_url
     page.accept_confirm do
       click_on "Destroy", match: :first
     end

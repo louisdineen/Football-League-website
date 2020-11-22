@@ -11,3 +11,5 @@
 
 results = Result.create([home: 'Crystal Palace', hg: 4, ag: 1, away: 'Leeds', time: '07/07/2020 15:00'])
 result1 = Result.create([home: 'West Ham', hg: 0, ag: 0, away: 'Tottenham', time: '07/07/2020 15:00'])
+
+match = Match.create([home: 'Burnley', away: 'Crystal Palace', time: '23/11/2020'])

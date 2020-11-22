@@ -1,28 +1,28 @@
-class ResultsController < ApplicationController
+class FixturesController < ApplicationController
   before_action :set_result, only: [:show, :edit, :update, :destroy]
 
-  # GET /results
-  # GET /results.json
+  # GET /fixtures
+  # GET /fixtures.json
   def index
     @results = Result.all
   end
 
-  # GET /results/1
-  # GET /results/1.json
+  # GET /fixtures/1
+  # GET /fixtures/1.json
   def show
   end
 
-  # GET /results/new
+  # GET /fixtures/new
   def new
     @result = Result.new
   end
 
-  # GET /results/1/edit
+  # GET /fixtures/1/edit
   def edit
   end
 
-  # POST /results
-  # POST /results.json
+  # POST /fixtures
+  # POST /fixtures.json
   def create
     @result = Result.new(result_params)
 
@@ -37,8 +37,8 @@ class ResultsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /results/1
-  # PATCH/PUT /results/1.json
+  # PATCH/PUT /fixtures/1
+  # PATCH/PUT /fixtures/1.json
   def update
     respond_to do |format|
       if @result.update(result_params)
@@ -51,12 +51,12 @@ class ResultsController < ApplicationController
     end
   end
 
-  # DELETE /results/1
-  # DELETE /results/1.json
+  # DELETE /fixtures/1
+  # DELETE /fixtures/1.json
   def destroy
     @result.destroy
     respond_to do |format|
-      format.html { redirect_to results_url, notice: 'Result was successfully destroyed.' }
+      format.html { redirect_to fixtures_url, notice: 'Result was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

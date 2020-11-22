@@ -1,9 +1,26 @@
-<h1>Football League Website</h1>
-<p></p>
-<%= button_to "View league tables", table_index_path %>
-<p></p>
-<%= button_to "View and update results", results_index_path %>
-<p></p>
-<%= button_to "Contact us", welcome_contact_path %>
-<p></p>
+<h1>Football Leagues</h1>
+<nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand" href="/">Home</a>
+  <form class="form-inline">
+    <a class="btn btn-outline-success" href="matches/index" role="button">
+        Fixtures
+    </a>
+    <div style="padding-left: 10px;">
+    <a class="btn btn-outline-success" href="fixtures/index" role="button">
+        Results
+    </a>
+    </div>
+    <div style="padding-left: 10px;">
+      <a class="btn btn-outline-primary" href="table/index" role="button">
+        League Tables
+      </a>
+    </div>
+    <div style="padding-left: 10px;">
+      <a class="btn btn-outline-secondary" href="welcome/contact" role="button">
+        Contact Us
+      </a>
+    </div>
+  </form>
+</nav>
+
 <%= image_tag "holmesdale-fanatics-display.jpg" %>
