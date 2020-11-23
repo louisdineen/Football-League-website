@@ -6,7 +6,6 @@ class CreateResults < ActiveRecord::Migration[5.2]
       t.integer :ag
       t.string :away
       t.string :time
-
       t.timestamps
     end
   end

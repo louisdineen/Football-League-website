@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_21_195507) do
+ActiveRecord::Schema.define(version: 2020_11_23_201505) do
 
   create_table "matches", force: :cascade do |t|
     t.string "home"
@@ -26,6 +26,17 @@ ActiveRecord::Schema.define(version: 2020_11_21_195507) do
     t.integer "ag"
     t.string "away"
     t.string "time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tables", force: :cascade do |t|
+    t.string "name"
+    t.integer "wins"
+    t.integer "draws"
+    t.integer "losses"
+    t.integer "gf"
+    t.integer "ga"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
