@@ -1,0 +1,60 @@
+<%= image_tag "epl-banner.png" %>
+
+<p></p>
+<table>
+  <thead>
+  <tr>
+    <th>&nbsp; Pos |</th>
+    <th>Team </th>
+    <th>P |</th>
+    <th>W |</th>
+    <th>D |</th>
+    <th>L |</th>
+    <th>GF |</th>
+    <th>GA |</th>
+    <th>GD |</th>
+    <th>Points</th>
+    <th colspan="10"></th>
+  </tr>
+  </thead>
+
+  <% count = 0 %>
+  <% array = Array.new(20){Array.new(10,0)} %>
+
+  <% @table.each do |team| %>
+    <% array[count][1] = team.name %>
+    <% array[count][2] = team.wins + team.draws + team.losses %>
+    <% array[count][3] = team.wins %>
+    <% array[count][4] = team.draws %>
+    <% array[count][5] = team.losses %>
+    <% array[count][6] = team.gf %>
+    <% array[count][7] = team.ga %>
+    <% array[count][8] = team.gf - team.ga %>
+    <% array[count][9] = 3*team.wins + team.draws %>
+    <% count = count + 1 %>
+  <% end %>
+
+  <% pos = 1 %>
+  <% array.sort_by!{|k| [ k[9], k[8], k[6] ] }.reverse! %>
+
+  <% for i in array %>
+    <tbody>
+    <tr>
+      <td>&nbsp; <%= pos %></td>
+      <td><%= i[1] %></td>
+      <td><%= i[2] %></td>
+      <td><%= i[3] %></td>
+      <td><%= i[4] %></td>
+      <td><%= i[5] %></td>
+      <td><%= i[6] %></td>
+      <td><%= i[7] %></td>
+      <td><%= i[8] %></td>
+      <td><%= i[9] %></td>
+    </tr>
+    <% pos = pos + 1 %>
+  <% end %>
+  </tbody>
+</table>
+
+<p></p>
+&nbsp; <%= link_to 'Back', :back %>

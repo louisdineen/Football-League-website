@@ -1,0 +1,47 @@
+<%= form_with(model: table, local: true) do |form| %>
+  <% if table.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(table.errors.count, "error") %> prohibited this table from being saved:</h2>
+
+      <ul>
+      <% table.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :[name %>
+    <%= form.text_field :[name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :wins %>
+    <%= form.number_field :wins %>
+  </div>
+
+  <div class="field">
+    <%= form.label :draws %>
+    <%= form.number_field :draws %>
+  </div>
+
+  <div class="field">
+    <%= form.label :losses %>
+    <%= form.number_field :losses %>
+  </div>
+
+  <div class="field">
+    <%= form.label :gf %>
+    <%= form.number_field :gf %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ga %>
+    <%= form.text_field :ga %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

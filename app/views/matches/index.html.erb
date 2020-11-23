@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+&nbsp; <%= image_tag "fixtures.png" %>
+
+<p></p>
+<table>
+  <thead>
+    <tr>
+      <th>&nbsp; Home</th>
+      <th> </th>
+      <th>Away</th>
+      <th>Date</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @matches.each do |match| %>
+      <tr>
+        <td>&nbsp; <%= match.home %> &nbsp; </td>
+        <td>V &nbsp; </td>
+        <td><%= match.away %> &nbsp; </td>
+        <td><%= match.time %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+&nbsp; <%= link_to 'Back', :back %>
