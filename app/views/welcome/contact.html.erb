@@ -1,21 +1,24 @@
-<script>
-</script>
-
 <html>
-  <h1>Contact Us</h1>
-  <form name="myForm">
-    <p>Name:<p></p><input type="text"
+  <p></p>
+  &nbsp; <%= image_tag "contact.png" %>
+  <p></p>
+  <form name="myForm" onsubmit="alert('The form was submitted and an email was sent')">
+    <p>&nbsp; Name:<p></p>&nbsp; <input
+            type="text"
             name="name"
             required></p>
-  <p>Email:<p></p><input type="text"
+    <p>&nbsp; Email:<p></p>&nbsp; <input
+            type="text"
             name="email"
             required></p>
-  <p>Query:<p></p><textarea name="query" rows="5"
-                      required></textarea></p>
-  <p><input type ="submit"
+    <p>&nbsp; Query:<p></p>&nbsp; <textarea
+            name="query"
+            rows="5"
+            required></textarea></p>
+    <p>&nbsp; <input type ="submit"
             value="Submit"></p>
   </form>
 </html>
 
-<p> </p>
-<%= link_to 'Back', :back %>
+<p></p>
+&nbsp; <%= link_to 'Back', root_path %>

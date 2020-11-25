@@ -4,19 +4,25 @@
 <table>
   <thead>
   <tr>
-    <th>&nbsp; Pos |</th>
-    <th>Team </th>
-    <th>P |</th>
-    <th>W |</th>
-    <th>D |</th>
-    <th>L |</th>
-    <th>GF |</th>
-    <th>GA |</th>
-    <th>GD |</th>
-    <th>Points</th>
+    <th>&nbsp;Pos </th>
+    <th>&nbsp;| Team </th>
+    <th>&nbsp;| P </th>
+    <th>&nbsp;| W </th>
+    <th>&nbsp; | D </th>
+    <th>&nbsp; | L </th>
+    <th>&nbsp; | GF </th>
+    <th>&nbsp;| GA </th>
+    <th>&nbsp;| GD </th>
+    <th>&nbsp;| Points</th>
     <th colspan="10"></th>
   </tr>
   </thead>
+
+  <tbody>
+    <tr>
+      <td colspan="10"> ----------------------------------------------------------------------</td>
+    </tr>
+  </tbody>
 
   <% count = 0 %>
   <% array = Array.new(20){Array.new(10,0)} %>
@@ -40,16 +46,16 @@
   <% for i in array %>
     <tbody>
     <tr>
-      <td>&nbsp; <%= pos %></td>
-      <td><%= i[1] %></td>
-      <td><%= i[2] %></td>
-      <td><%= i[3] %></td>
-      <td><%= i[4] %></td>
-      <td><%= i[5] %></td>
-      <td><%= i[6] %></td>
-      <td><%= i[7] %></td>
-      <td><%= i[8] %></td>
-      <td><%= i[9] %></td>
+      <td>&nbsp;<%= pos %></td>
+      <td>&nbsp;| <%= i[1] %></td>
+      <td>&nbsp;| <%= i[2] %></td>
+      <td>&nbsp;| <%= i[3] %></td>
+      <td>&nbsp; | <%= i[4] %></td>
+      <td>&nbsp; | <%= i[5] %></td>
+      <td>&nbsp; | <%= i[6] %></td>
+      <td>&nbsp;| <%= i[7] %></td>
+      <td>&nbsp;| <%= i[8] %></td>
+      <td>&nbsp;| <%= i[9] %></td>
     </tr>
     <% pos = pos + 1 %>
   <% end %>
