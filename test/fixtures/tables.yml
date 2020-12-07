@@ -1,7 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  [name: MyString
+  name: MyString
   wins: 1
   draws: 1
   losses: 1
@@ -9,7 +9,7 @@ one:
   ga: 
 
 two:
-  [name: MyString
+  name: MyString
   wins: 1
   draws: 1
   losses: 1

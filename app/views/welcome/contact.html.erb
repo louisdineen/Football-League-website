@@ -1,24 +1,30 @@
 <html>
   <p></p>
   &nbsp; <%= image_tag "contact.png" %>
+  <!-- image of contact us text -->
   <p></p>
   <form name="myForm" onsubmit="alert('The form was submitted and an email was sent')">
     <p>&nbsp; Name:<p></p>&nbsp; <input
             type="text"
             name="name"
             required></p>
+    <!-- input box for user to enter name -->
     <p>&nbsp; Email:<p></p>&nbsp; <input
             type="text"
             name="email"
             required></p>
+    <!-- input box for user to enter email -->
     <p>&nbsp; Query:<p></p>&nbsp; <textarea
             name="query"
             rows="5"
             required></textarea></p>
+    <!-- input box for user to enter query -->
     <p>&nbsp; <input type ="submit"
             value="Submit"></p>
+    <!-- button to submit entered values -->
   </form>
 </html>
 
 <p></p>
 &nbsp; <%= link_to 'Back', root_path %>
+<!-- link to go back to home page -->

@@ -1,6 +1,39 @@
-<p id="notice"><%= notice %></p>
+&nbsp;<%= image_tag "logo_banner.png" %>
+<!-- website logo displayed at top of the page -->
+<p></p>
 
+<nav class="navbar navbar-light bg-light">
+  <!-- light navbar at top of page using bootstrap -->
+  <a class="navbar-brand" href="/">Home Page</a>
+  <form class="form-inline">
+    <a class="btn btn-outline-primary" href="/matches/index" role="button">
+      Fixtures
+    </a>
+    <!-- button which directs user to the fixtures page -->
+    <div style="padding-left: 10px;">
+      <a class="btn btn-outline-success" href="/fixtures/index" role="button">
+        Results
+      </a>
+      <!-- button which directs user to the results page -->
+    </div>
+    <div style="padding-left: 10px;">
+      <a class="btn btn-outline-danger" href="/tables/index" role="button">
+        League Tables
+      </a>
+      <!-- button which directs user to the league tables page -->
+    </div>
+    <div style="padding-left: 10px;">
+      <a class="btn btn-outline-info" href="/welcome/contact" role="button">
+        Contact Us
+      </a>
+      <!-- button which directs user to the contact us page -->
+    </div>
+  </form>
+</nav>
+
+<p></p>
 &nbsp; <%= image_tag "teams.jpg" %>
+<!-- display image of all teams logos -->
 <p></p>
 
 <table>
@@ -14,10 +47,13 @@
       <th colspan="3"></th>
     </tr>
   </thead>
+  <!-- column headings for home team, away team and date -->
 
   <tbody>
     <% @results.each do |result| %>
       <tr>
+        <!-- loop through each result in the database and
+        display the teams, scores and dates in a neat format -->
         <td>&nbsp; <%= result.home %> &nbsp; </td>
         <td><%= result.hg %> - </td>
         <td><%= result.ag %> &nbsp; </td>
@@ -27,6 +63,4 @@
     <% end %>
   </tbody>
 </table>
-
-<br>
-&nbsp; <%= link_to 'Back', :back %>
+<p></p>

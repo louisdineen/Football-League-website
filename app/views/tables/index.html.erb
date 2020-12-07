@@ -1,52 +1,99 @@
-<%= image_tag "epl-banner.png" %>
+&nbsp;<%= image_tag "logo_banner.png" %>
+<!-- website logo displayed at top of the page -->
+<p></p>
+
+<nav class="navbar navbar-light bg-light">
+  <!-- light navbar at top of page using bootstrap -->
+  <a class="navbar-brand" href="/">Home Page</a>
+  <form class="form-inline">
+    <a class="btn btn-outline-primary" href="/matches/index" role="button">
+      Fixtures
+    </a>
+    <!-- button which directs user to the fixtures page -->
+    <div style="padding-left: 10px;">
+      <a class="btn btn-outline-success" href="/fixtures/index" role="button">
+        Results
+      </a>
+      <!-- button which directs user to the results page -->
+    </div>
+    <div style="padding-left: 10px;">
+      <a class="btn btn-outline-danger" href="/tables/index" role="button">
+        League Tables
+      </a>
+      <!-- button which directs user to the league tables page -->
+    </div>
+    <div style="padding-left: 10px;">
+      <a class="btn btn-outline-info" href="/welcome/contact" role="button">
+        Contact Us
+      </a>
+      <!-- button which directs user to the contact us page -->
+    </div>
+  </form>
+</nav>
+
+<p></p>
+&nbsp;<%= image_tag "epl-banner.png" %>
+<!-- display image of premier league logo -->
 
 <p></p>
 <table>
   <thead>
-  <tr>
-    <th>&nbsp;Pos </th>
-    <th>&nbsp;| Team </th>
-    <th>&nbsp;| P </th>
-    <th>&nbsp;| W </th>
-    <th>&nbsp; | D </th>
-    <th>&nbsp; | L </th>
-    <th>&nbsp; | GF </th>
-    <th>&nbsp;| GA </th>
-    <th>&nbsp;| GD </th>
-    <th>&nbsp;| Points</th>
-    <th colspan="10"></th>
-  </tr>
+    <tr>
+      <th>&nbsp;Pos </th>
+      <th>&nbsp;| Team </th>
+      <th>&nbsp;| P </th>
+      <th>&nbsp;| W </th>
+      <th>&nbsp; | D </th>
+      <th>&nbsp; | L </th>
+      <th>&nbsp; | GF </th>
+      <th>&nbsp;| GA </th>
+      <th>&nbsp;| GD </th>
+      <th>&nbsp;| Points</th>
+      <th colspan="10"></th>
+    </tr>
   </thead>
+  <!-- column headings for position, team, games played,
+    wins, draws, losses, goals for, goals against, goal
+    difference and points for each team -->
 
   <tbody>
     <tr>
       <td colspan="10"> ----------------------------------------------------------------------</td>
+      <!-- divider between headings and body of table -->
     </tr>
   </tbody>
 
   <% count = 0 %>
   <% array = Array.new(20){Array.new(10,0)} %>
+  <!-- creates an array to store all teams information -->
 
   <% @table.each do |team| %>
+    <!-- loop through database and store each field in the array -->
     <% array[count][1] = team.name %>
     <% array[count][2] = team.wins + team.draws + team.losses %>
+    <!-- games played equals total wins, draws and losses -->
     <% array[count][3] = team.wins %>
     <% array[count][4] = team.draws %>
     <% array[count][5] = team.losses %>
     <% array[count][6] = team.gf %>
     <% array[count][7] = team.ga %>
     <% array[count][8] = team.gf - team.ga %>
+    <!-- goal difference equals goals for minus goals against -->
     <% array[count][9] = 3*team.wins + team.draws %>
+    <!-- 3 points for each win and 1 point for each draw -->
     <% count = count + 1 %>
   <% end %>
 
   <% pos = 1 %>
   <% array.sort_by!{|k| [ k[9], k[8], k[6] ] }.reverse! %>
+  <!-- sorts the array by points, then goal difference and then goals for -->
 
   <% for i in array %>
+    <!-- loops through array to display each team in a neat format -->
     <tbody>
     <tr>
       <td>&nbsp;<%= pos %></td>
+      <!-- position is the count which increments each loop -->
       <td>&nbsp;| <%= i[1] %></td>
       <td>&nbsp;| <%= i[2] %></td>
       <td>&nbsp;| <%= i[3] %></td>
@@ -61,6 +108,4 @@
   <% end %>
   </tbody>
 </table>
-
 <p></p>
-&nbsp; <%= link_to 'Back', :back %>

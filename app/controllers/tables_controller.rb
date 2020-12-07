@@ -1,5 +1,4 @@
 class TablesController < ApplicationController
-  before_action :set_result, only: [:show]
 
   # GET /fixtures
   # GET /fixtures.json
