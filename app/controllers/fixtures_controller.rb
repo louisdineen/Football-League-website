@@ -7,13 +7,12 @@ class FixturesController < ApplicationController
   end
 
   private
-
-    # Use callbacks to share common setup or constraints between actions.
+  # Use callbacks to share common setup or constraints between actions.
   def set_result
     @result = Result.find(params[:id])
   end
 
-    # Only allow a list of trusted parameters through.
+  # Only allow a list of trusted parameters through.
   def result_params
     params.require(:result).permit(:home, :hg, :ag, :away, :time)
   end

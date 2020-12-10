@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  home: MyString
-  away: MyString
-  time: MyString
+  home: Crystal Palace
+  away: Liverpool
+  time: 19/12/2020 15:00
 
 two:
-  home: MyString
-  away: MyString
-  time: MyString
+  home: Man United
+  away: Man City
+  time: 19/12/2020 15:00

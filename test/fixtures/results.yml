@@ -1,15 +1,15 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  home: MyString
-  hg: 1
+  home: Crystal Palace
+  hg: 2
   ag: 1
-  away: MyString
-  time: MyString
+  away: Tottenham
+  time: 12/12/2020 15:00
 
 two:
-  home: MyString
+  home: West Ham
   hg: 1
   ag: 1
-  away: MyString
-  time: MyString
+  away: Leeds
+  time: 12/12/2020 15:00

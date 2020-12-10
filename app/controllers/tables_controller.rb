@@ -4,7 +4,7 @@ class TablesController < ApplicationController
   # GET /fixtures.json
   def index
     @tables = Table.all
-    @table = Table.all.all
+    # @table = Table.all.all
   end
 
   private
@@ -15,6 +15,6 @@ class TablesController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def result_params
-    params.require(:result).permit(:home, :wins, :draws, :losses, :hg, :ag)
+    params.require(:result).permit(:name, :wins, :draws, :losses, :gf, :ga)
   end
 end

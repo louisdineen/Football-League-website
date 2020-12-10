@@ -1,17 +1,17 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
+  name: Fulham
   wins: 1
   draws: 1
   losses: 1
-  gf: 1
-  ga: 
+  gf: 2
+  ga: 1
 
 two:
-  name: MyString
-  wins: 1
-  draws: 1
-  losses: 1
+  name: West Brom
+  wins: 0
+  draws: 0
+  losses: 2
   gf: 1
-  ga: 
+  ga: 6

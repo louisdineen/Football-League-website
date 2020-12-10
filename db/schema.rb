@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_23_201505) do
+ActiveRecord::Schema.define(version: 2020_11_23_170833) do
 
   create_table "matches", force: :cascade do |t|
     t.string "home"
