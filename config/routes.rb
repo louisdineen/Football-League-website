@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :contacts
+  # resources :contacts
 
   get 'welcome/index'
   get 'welcome/contact'
@@ -10,6 +10,6 @@ Rails.application.routes.draw do
   get 'fixtures/index'
   get 'matches/index'
 
+  # sets root to be welcome index page
   root 'welcome#index'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

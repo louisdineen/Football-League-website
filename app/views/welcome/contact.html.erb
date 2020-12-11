@@ -1,30 +1,39 @@
 <html>
   <p></p>
-  &nbsp; <%= image_tag "contact.png" %>
-  <!-- image of contact us text -->
-  <p></p>
   <form name="myForm" onsubmit="alert('The form was submitted and an email was sent')">
-    <p>&nbsp; Name:<p></p>&nbsp; <input
+    <p><%= image_tag "contactus.jpg" %></p>
+    <p>Name:&emsp;<input
+            style="width: 400px;"
             type="text"
             name="name"
             required></p>
     <!-- input box for user to enter name -->
-    <p>&nbsp; Email:<p></p>&nbsp; <input
+    <p>Email: &emsp;<input
+            style="width: 400px;"
             type="text"
             name="email"
             required></p>
     <!-- input box for user to enter email -->
-    <p>&nbsp; Query:<p></p>&nbsp; <textarea
+    <p>Query:&emsp;<textarea
+            style="width: 400px; vertical-align: text-top;"
             name="query"
-            rows="5"
-            required></textarea></p>
+            rows="7"
+            required></textarea>
+    </p>
     <!-- input box for user to enter query -->
-    <p>&nbsp; <input type ="submit"
-            value="Submit"></p>
-    <!-- button to submit entered values -->
+    <p>
+      <a href="/"><button style="width: 200px; height: 40px; border-radius: 6px; background-color: indianred">Back</button></a>
+      <!-- button to go back to home page -->
+      <button style="width: 200px; height: 40px; border-radius: 6px; background-color: darkolivegreen">Submit</button>
+      <!-- button to submit entered values -->
+    </p>
+
   </form>
 </html>
 
-<p></p>
-&nbsp; <%= link_to 'Back', root_path %>
-<!-- link to go back to home page -->
+<style>
+    form {
+    text-align: center;
+    }
+</style>
+<!-- css to center align form -->
